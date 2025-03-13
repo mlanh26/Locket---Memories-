@@ -13,4 +13,5 @@ Bên cạnh đó ứng dụng còn cho phép người dùng nhắn tin với b�
 ![Đồ án Đa nền tảng-Biểu đồ phân rã chức năng drawio (1)](https://github.com/user-attachments/assets/e1219f3c-dc4b-4ded-b4e5-2395247fa741)
 
 ## ERD (Entity-relationship model)
+![CSDL drawio](https://github.com/user-attachments/assets/5a9c7f83-6781-43aa-94b8-581b93e08e4f)
 
