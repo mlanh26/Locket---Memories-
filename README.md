@@ -15,3 +15,4 @@ Bên cạnh đó ứng dụng còn cho phép người dùng nhắn tin với b�
 ## ERD (Entity-relationship model)
 ![CSDL drawio](https://github.com/user-attachments/assets/5a9c7f83-6781-43aa-94b8-581b93e08e4f)
 
+## Biểu đồ Use Case
