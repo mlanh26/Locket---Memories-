@@ -10,7 +10,7 @@ Bên cạnh đó ứng dụng còn cho phép người dùng nhắn tin với b�
 - Ứng dụng còn có phiên bản premium với nhiều giao diện mới 
 
 ## Biểu đồ phân rã chức năng
-- 
+![Đồ án Đa nền tảng-Biểu đồ phân rã chức năng drawio (1)](https://github.com/user-attachments/assets/e1219f3c-dc4b-4ded-b4e5-2395247fa741)
 
 ## ERD (Entity-relationship model)
 
