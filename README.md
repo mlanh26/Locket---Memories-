@@ -9,6 +9,13 @@ Bên cạnh đó ứng dụng còn cho phép người dùng nhắn tin với b�
 - Cho phép kết bạn, xóa bạn, tìm kiếm bạn bè
 - Ứng dụng còn có phiên bản premium với nhiều giao diện mới 
 
+##Công nghệ sử dụng
+- Backend: Node.js
+- Fontend: React Native + Expo
+- Database: MySQL
+- Một số công nghệ có thể kết hợp: Firebase,...
+- 
+
 ## Biểu đồ phân rã chức năng
 ![Đồ án Đa nền tảng-Biểu đồ phân rã chức năng drawio (1)](https://github.com/user-attachments/assets/e1219f3c-dc4b-4ded-b4e5-2395247fa741)
 
