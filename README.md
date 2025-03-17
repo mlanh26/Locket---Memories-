@@ -9,7 +9,7 @@ Bên cạnh đó ứng dụng còn cho phép người dùng nhắn tin với b�
 - Cho phép kết bạn, xóa bạn, tìm kiếm bạn bè
 - Ứng dụng còn có phiên bản premium với nhiều giao diện mới 
 
-##Công nghệ sử dụng
+## Công nghệ sử dụng
 - Backend: Node.js
 - Fontend: React Native + Expo
 - Database: MySQL
