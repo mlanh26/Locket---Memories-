@@ -2,48 +2,52 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
 import { useRouter } from 'expo-router';
 
-const NameScreen = () => {
+const NumberVerificationScreen = () => {
   const router = useRouter();
-  const [lastName, setLastName] = useState('');
-  const [firstName, setFirstName] = useState('');
+  const [code, setCode] = useState('');
 
-  const isValidName = () => {
-    return lastName.trim().length > 0 && firstName.trim().length > 0;
+  const isValidCode = () => {
+    return code.length === 6;
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>What's your name?</Text>
+      <Text style={styles.title}>Verify your email</Text>
       
       <TextInput
         style={styles.input}
-        value={lastName}
-        onChangeText={setLastName}
-        placeholder="Last Name"
+        value={code}
+        onChangeText={setCode}
+        placeholder="6-Digit Code"
         placeholderTextColor="#666"
-        autoCapitalize="words"
+        keyboardType="number-pad"
+        maxLength={6}
+        blurOnSubmit={true}
+        returnKeyType="done"
+        onSubmitEditing={() => {
+          if (isValidCode()) {
+            // Chuyển sang bước tiếp theo
+            router.push('/name');
+          }
+        }}
       />
 
-      <TextInput
-        style={[styles.input, styles.secondInput]}
-        value={firstName}
-        onChangeText={setFirstName}
-        placeholder="First Name"
-        placeholderTextColor="#666"
-        autoCapitalize="words"
-      />
+      <Text style={styles.helperText}>
+        You should have just received{'\n'}
+        a text with your code
+      </Text>
 
       <TouchableOpacity 
         style={[
           styles.button,
-          isValidName() ? styles.buttonActive : styles.buttonInactive
+          isValidCode() ? styles.buttonActive : styles.buttonInactive
         ]}
-        onPress={() => router.push('/friends')}
-        disabled={!isValidName()}
+        onPress={() => router.push('/name')}
+        disabled={!isValidCode()}
       >
         <Text style={[
           styles.buttonText,
-          isValidName() ? styles.buttonTextActive : styles.buttonTextInactive
+          isValidCode() ? styles.buttonTextActive : styles.buttonTextInactive
         ]}>Continue →</Text>
       </TouchableOpacity>
     </View>
@@ -71,8 +75,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     width: '100%',
   },
-  secondInput: {
+  helperText: {
+    color: '#666',
+    fontSize: 14,
+    textAlign: 'center',
     marginTop: 10,
+    lineHeight: 20,
   },
   button: {
     paddingVertical: 15,
@@ -103,4 +111,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NameScreen;
+export default NumberVerificationScreen;

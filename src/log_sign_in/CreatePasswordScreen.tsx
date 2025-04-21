@@ -2,44 +2,48 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
 import { useRouter } from 'expo-router';
 
-const NumberVerificationScreen = () => {
+const CreatePasswordScreen = () => {
   const router = useRouter();
-  const [code, setCode] = useState('');
+  const [creatPassword, setCreatPassword] = useState('');
+  const [enterAgain, setEnterAgain] = useState('');
 
-  const isValidCode = () => {
-    return code.length === 6;
+  const isValidName = () => {
+    return creatPassword.trim().length > 0 && enterAgain.trim().length > 0;
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Verify your number</Text>
+      <Text style={styles.title}>What's your password?</Text>
       
       <TextInput
         style={styles.input}
-        value={code}
-        onChangeText={setCode}
-        placeholder="6-Digit Code"
+        value={creatPassword}
+        onChangeText={setCreatPassword}
+        placeholder="Create password"
         placeholderTextColor="#666"
-        keyboardType="number-pad"
-        maxLength={6}
+        autoCapitalize="words"
       />
 
-      <Text style={styles.helperText}>
-        You should have just received{'\n'}
-        a text with your code
-      </Text>
+      <TextInput
+        style={[styles.input, styles.secondInput]}
+        value={enterAgain}
+        onChangeText={setEnterAgain}
+        placeholder="Confirm password"
+        placeholderTextColor="#666"
+        autoCapitalize="words"
+      />
 
       <TouchableOpacity 
         style={[
           styles.button,
-          isValidCode() ? styles.buttonActive : styles.buttonInactive
+          isValidName() ? styles.buttonActive : styles.buttonInactive
         ]}
-        onPress={() => router.push('/name')}
-        disabled={!isValidCode()}
+        onPress={() => router.push('/friends')}
+        disabled={!isValidName()}
       >
         <Text style={[
           styles.buttonText,
-          isValidCode() ? styles.buttonTextActive : styles.buttonTextInactive
+          isValidName() ? styles.buttonTextActive : styles.buttonTextInactive
         ]}>Continue →</Text>
       </TouchableOpacity>
     </View>
@@ -67,12 +71,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     width: '100%',
   },
-  helperText: {
-    color: '#666',
-    fontSize: 14,
-    textAlign: 'center',
+  secondInput: {
     marginTop: 10,
-    lineHeight: 20,
   },
   button: {
     paddingVertical: 15,
@@ -103,4 +103,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default NumberVerificationScreen;
+export default CreatePasswordScreen;

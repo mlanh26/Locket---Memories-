@@ -1,5 +1,5 @@
 import { View } from 'react-native';
-import CameraScreen from '@/src/CameraScreen';
+import CameraScreen from '../src/camera/CameraScreen';
 
 export default function Camera() {
   return (
@@ -7,4 +7,4 @@ export default function Camera() {
       <CameraScreen />
     </View>
   );
-} 
+}

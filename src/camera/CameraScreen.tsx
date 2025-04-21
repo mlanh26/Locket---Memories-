@@ -45,23 +45,30 @@ const CameraScreen = () => {
       <CameraView
         style={styles.camera}
         facing={facing}
+        zoom={zoom}
       >
         {/* Top Bar */}
         <View style={styles.topBar}>
-          <View style={styles.profileSection}>
+          <TouchableOpacity 
+            style={styles.profileSection}
+            onPress={() => router.push('/profile')}
+          >
             <Image 
-              source={require('../assets/images/profile.png')}
+              source={require('../../assets/images/profile.png')}
               style={styles.profileIcon}
             />
-          </View>
+          </TouchableOpacity>
 
           <View style={styles.friendsCounter}>
             <Text style={styles.friendsText}>27 người bạn</Text>
           </View>
 
-          <TouchableOpacity style={styles.messagesButton}>
+          <TouchableOpacity 
+            style={styles.messagesButton}
+            onPress={() => router.push('/messages')}
+          >
             <Image 
-              source={require('../assets/images/message.png')}
+              source={require('../../assets/images/message.png')}
               style={styles.messageIcon}
             />
             <View style={styles.notificationDot} />
@@ -78,7 +85,7 @@ const CameraScreen = () => {
           <TouchableOpacity style={styles.galleryButton}>
             <View style={styles.galleryPreview}>
               <Image 
-                source={require('../assets/images/Picture.png')}
+                source={require('../../assets/images/Picture.png')}
                 style={styles.galleryIcon}
               />
             </View>
@@ -98,7 +105,7 @@ const CameraScreen = () => {
             onPress={toggleCameraFacing}
           >
             <Image 
-              source={require('../assets/images/Refresh.png')}
+              source={require('../../assets/images/Refresh.png')}
               style={styles.flipIcon}
             />
           </TouchableOpacity>
@@ -108,7 +115,7 @@ const CameraScreen = () => {
         <TouchableOpacity style={styles.historyButton}>
           <Text style={styles.historyText}>Lịch sử</Text>
           <Image 
-            source={require('../assets/images/arrow-down.png')}
+            source={require('../../assets/images/arrow-down.png')}
             style={styles.arrowIcon}
           />
         </TouchableOpacity>
@@ -317,4 +324,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CameraScreen; 
+export default CameraScreen;
